@@ -1,0 +1,116 @@
+Button {
+    width: auto;
+    min-width: 16;
+    height: auto;
+    background: $panel;
+    color: $text;
+    border: none;
+    border-top: tall $panel-lighten-2;
+    border-bottom: tall $panel-darken-3;
+    text-align: center;
+    content-align: center middle;
+    text-style: bold;
+}
+
+Button:focus {
+    text-style: bold reverse;
+}
+
+Button:hover {
+    border-top: tall $panel;
+    background: $panel-darken-2;
+    color: $text;
+}
+
+Button.-active {
+    background: $panel;
+    border-bottom: tall $panel-lighten-2;
+    border-top: tall $panel-darken-2;
+    tint: $background 30%;
+}
+
+/* Primary variant */
+Button.-blue {
+    background: $primary;
+    color: $text;
+    border-top: tall $primary-lighten-3;
+    border-bottom: tall $primary-darken-3;
+
+}
+
+Button.-blue:hover {
+    background: $primary-darken-2;
+    color: $text;
+    border-top: tall $primary;
+}
+
+Button.-blue.-active {
+    background: $primary;
+    border-bottom: tall $primary-lighten-3;
+    border-top: tall $primary-darken-3;
+}
+
+
+/* Success variant */
+Button.-green {
+    background: $success;
+    color: $text;
+    border-top: tall $success-lighten-2;
+    border-bottom: tall $success-darken-3;
+}
+
+Button.-green:hover {
+    background: $success-darken-2;
+    color: $text;
+    border-top: tall $success;
+}
+
+Button.-green.-active {
+    background: $success;
+    border-bottom: tall $success-lighten-2;
+    border-top: tall $success-darken-2;
+}
+
+
+/* Warning variant */
+Button.-yellow {
+    background: $warning;
+    color: $text;
+    border-top: tall $warning-lighten-2;
+    border-bottom: tall $warning-darken-3;
+}
+
+Button.-yellow:hover {
+    background: $warning-darken-2;
+    color: $text;
+    border-top: tall $warning;
+
+}
+
+Button.-yellow.-active {
+    background: $warning;
+    border-bottom: tall $warning-lighten-2;
+    border-top: tall $warning-darken-2;
+}
+
+
+/* Error variant */
+Button.-red {
+    background: $error;
+    color: $text;
+    border-top: tall $error-lighten-2;
+    border-bottom: tall $error-darken-3;
+
+}
+
+Button.-red:hover {
+    background: $error-darken-1;
+    color: $text;
+    border-top: tall $error;
+}
+
+Button.-red.-active {
+    background: $error;
+    border-bottom: tall $error-lighten-2;
+    border-top: tall $error-darken-2;
+}

@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "telegram-textual"
+version = "0.1.0"
+description = ""
+authors = ["truedesigner <mail@truedesigners.ru>"]
+readme = "README.md"
+packages = [{include = "telegram_textual"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+textual = "^0.41.0"
+
+
+[tool.poetry.group.dev.dependencies]
+textual-dev = "^1.2.1"
+ruff = "^0.1.6"
+black = "^23.11.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
