@@ -1,0 +1,103 @@
+[tool.poetry]
+name = "telegram-textual"
+version = "0.1.0"
+description = ""
+authors = ["truedesigner <mail@truedesigners.ru>"]
+readme = "README.md"
+packages = [{include = "telegram_textual"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+textual = "^0.41.0"
+telethon = "^1.32.1"
+
+
+[tool.poetry.group.dev.dependencies]
+textual-dev = "^1.2.1"
+ruff = "^0.1.6"
+black = "^23.11.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 79
+exclude = [
+    "venv",
+    "alembic",
+    "tests",
+    "migrations",
+    "settings.py",
+    "manage.py",
+]
+ignore = [
+    "FBT001", # Boolean positional arg in function definition
+    "B008", # Do not perform function call `` in argument
+    "S311", # Standard pseudo-random generators are not suitable for cryptographic purposes
+    "INP001", # File `` is part of an implicit namespace package. Add an `__init__.py`
+    "A003", # Class attribute `` is shadowing a Python builtin
+    "ANN101", # Missing type annotation for `self` in method
+    "PT009", # Use a regular `assert` instead of unittest-style `assertEqual`
+    "ANN201", # Missing return type annotation for public function ``
+    "D102", # Missing docstring in public method
+]
+select = [
+    "F",
+    "E",
+    "W",
+    "C90",
+    "I",
+    "N",
+    "UP",
+    "YTT",
+    "ANN",
+    "ASYNC",
+    "S",
+    "BLE",
+    "FBT",
+    "B",
+    "COM",
+    "C4",
+    "DTZ",
+    "T10",
+    "DJ",
+    "EM",
+    "EXE",
+    "ISC",
+    "ICN",
+    "G",
+    "INP",
+    "PIE",
+    "T20",
+    "PYI",
+    "PT",
+    "Q",
+    "RSE",
+    "RET",
+    "SLF",
+    "SIM",
+    "TID",
+    "TCH",
+    "INT",
+    "ARG",
+    "PTH",
+    "TD",
+    "FIX",
+    "ERA",
+    "PD",
+    "PGH",
+    "PL",
+    "PLC",
+    "PLE",
+    "PLR",
+    "PLW",
+    "TRY",
+    "FLY",
+    "NPY",
+    "AIR",
+    "RUF",
+]
+
+[tool.black]
+line-length = 79
