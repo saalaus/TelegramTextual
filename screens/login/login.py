@@ -1,5 +1,6 @@
 from rich.console import RenderableType
 from telethon import TelegramClient
+from telethon.tl.types.auth import SentCode
 from textual import on, work
 from textual.app import ComposeResult
 from textual.screen import ModalScreen, Screen
@@ -57,20 +58,22 @@ class Login(Screen):
         )
 
     def compose(self) -> ComposeResult:
-        yield Input(placeholder="Phone Number")
+        yield Input(placeholder="Phone Number", id = "phone")
         yield Button("login", style="blue", id="login")
 
     @on(Button.Pressed, "#login")
     def login_button(self, event: Button.Pressed) -> None:
-        print(event)
-        self.app.push_screen("password_modal", self.get_code)
-        # self.login()
+        self.phone = self.query_one("phone").value
+        self.login()
 
-    def get_code(self, code: str | bool):
-        print(code)
+    def get_code(self, code: str):
+        self.login(code)
 
     @work
-    async def login(self):
+    async def login(self, code: str = None):
         print(await client.connect())
-        print(await client.sign_in("89995620938"))
+        a = await client.sign_in(self.phone, code)
+        print(a)
+        if type(a) == SentCode:
+            self.app.push_screen("password_modal", self.get_code)
         # print(await client.get_me())
